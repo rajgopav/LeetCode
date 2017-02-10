@@ -3,7 +3,18 @@ import java.util.*;
 public class RightSideViewBT {
 
 	public static void main(String[] args) {
-
+		RViewNode root = new RViewNode(5);
+		root.left = new RViewNode(10);
+		root.right = new RViewNode(15);
+		root.left.left = new RViewNode(20);
+		root.left.right = new RViewNode(25);
+		root.right.left = new RViewNode(30);
+		root.right.right = new RViewNode(35);
+		root.left.right.right = new RViewNode(45);
+		
+		RightSideViewBT rv = new RightSideViewBT();
+		List<RViewNode> result = rv.rightSideView(root);
+		result.forEach(node -> System.out.println(node.data));
 	}
 	
 	public List<RViewNode> rightSideView(RViewNode root) {
@@ -22,6 +33,14 @@ public class RightSideViewBT {
 				
 				if(i == 0) {
 					result.add(node);
+				}
+				
+				if(node.right != null) {
+					queue.add(node.right);
+				}
+				
+				if(node.left != null) {
+					queue.add(node.left);
 				}
 			}
 		}
