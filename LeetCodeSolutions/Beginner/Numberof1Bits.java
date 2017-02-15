@@ -1,19 +1,34 @@
-/**
- * @author Varun
- * LeetCode : Write a function that takes an unsigned integer and returns the number of ’1' bits it has (also known as the Hamming weight).
- * For example, the 32-bit integer ’11' has binary representation 00000000000000000000000000001011, so the function should return 3.
- */
 
 public class Numberof1Bits {
+
+	public static void main(String[] args) {
 	
-	public void hammmingWeight(int n){
-		
-		int result[] = new int[n];
+		int result[] = new int[6];
 		for(int i = 0; i < 6; i++) {
 			result[i] = Integer.bitCount(i);
 		}
-		
 		for(int i : result)
 			System.out.print(i + ",");
-	}	
+		
+		System.out.println();
+		int count;
+		count = Integer.reverse(43261596);
+		System.out.println(count);
+		
+		int x = 123;
+		int rev = 0;
+	    while(x != 0){
+	        rev = rev*10 + x%10;
+	        x = x/10;
+	    }
+	    System.out.println(rev);
+	    
+	    int a = 1, b =2;
+	    while(b!=0) {
+	    	int c = a&b;
+	    	a ^= b;
+	    	b = c << 1;
+	    }
+	    System.out.println(a);
+	}
 }
