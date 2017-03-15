@@ -25,18 +25,17 @@ public class IsomorphicStrings {
 		
 		LinkedHashMap<Character, Character> map = new LinkedHashMap<Character, Character>();
 		for(int i=0; i < s.length(); i++) {
-			char s1 = s.charAt(i);
-			char t1 = t.charAt(i);
+			char c1 = s.charAt(i);
+			char c2 = s.charAt(i);
 			
-			if(map.containsKey(s1)) {
-				if(map.get(s1) != t1){
+			if(map.containsKey(c1)) {
+				if(map.get(c1)!=c2){
 					return false;
 				}
 			} else {
-				if(map.containsValue(t1))
+				if(map.containsValue(c2))
 					return false;
-				
-				map.put(s1,t1);
+				map.put(c1, c2);
 			}
 		}
 		return true;

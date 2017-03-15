@@ -1,5 +1,4 @@
 public class ReverseString {
-
 	public static void reverseString(char str[]) {
 		int start = 0;
 		for(int j = 0; j < str.length; j++) {

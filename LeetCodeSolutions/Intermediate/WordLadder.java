@@ -47,19 +47,18 @@ public class WordLadder {
 				return top.steps;
 			
 			char[] arr = word.toCharArray();
-			for(int i =0; i < arr.length;i++) {
-				for(char c='a'; c < 'z'; c++) {
+			for(int i=0; i < arr.length; i++) {
+				for(char ch ='a'; ch < 'z'; ch++) {
 					char temp = arr[i];
-					if(arr[i] != c) {
-						arr[i] = c;
+					if(arr[i]!=ch) {
+						arr[i] = ch;
 					}
 					
 					String newWord = new String(arr);
-					if(wordDict.contains(newWord)){
+					if(wordDict.contains(newWord)) {
 						queue.add(new WordNode(newWord, top.steps+1));
 						wordDict.remove(newWord);
 					}
-					
 					arr[i] = temp;
 				}
 			}
